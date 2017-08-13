@@ -7,6 +7,19 @@ function nestedTarget(){
 }
 
 function deepestChild(){
+	let current = document.getElementById("grand-node")
+
+	while(current) {
+
+		if(current.children.length === 0) {
+			return current
+		}
+
+		if (current.children) {
+			current = current.children[0]
+		}
+	}
+	return null
 }
 
 function increaseRankBy(n){
@@ -15,6 +28,3 @@ function increaseRankBy(n){
 		rankedList[i].innerHTML = parseInt(rankedList[i].innerHTML) + n
 	}
 }
-
-
- 
